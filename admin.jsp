@@ -45,6 +45,7 @@
                 <td data-th="Id">
                 <%
                   String u_id = rs.getString("id");
+                  String status = rs.getString("status");
                 %>
                   <span id="abc" class="bt-content"><%=u_id%></span>
                 </td>
@@ -61,17 +62,25 @@
                   <span class="bt-content"><%=rs.getString("washDate")%>/<%=rs.getString("washTime")%></span>
                 </td>
                 <td data-th="Action">
+                  <%if(status.equals("pending"))
+                  {%>
                   <form action="verify_accept_reject.jsp">
                     <input type="hidden" value="<%=u_id%>" name="user_id">
                     <button type = "submit" value="accept" name="status" class="btn btn-primary btn-sm">Accept</button>
                     <button type = "submit" value="reject" name="status" class="btn btn-primary btn-sm">Reject</button>
                   </form>
+                  <%}
+                  else
+                  {%>
+                      <button type = "submit" value="accept" name="status" class="btn btn-primary btn-sm disabled"><%=status%></button>                      
+                    <%}
+                  %>
                 </td>
               </tr>
             </tbody>
             <% 
             }
-            rs.close(); conn.close(); %>
+            rs.close(); conn.close();%>
           </table>
         </div>
       </div>
