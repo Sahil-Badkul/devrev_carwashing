@@ -1,4 +1,6 @@
-
+        <%
+        String username = (String)session.getAttribute("username");  
+        %>
      <!-- Navbar start -->
      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand" href="index.jsp" style="color: rgb(255, 255, 255)">CarWash</a
@@ -18,17 +20,19 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="index.jsp"
-                >Washing Plans <span class="sr-only">(current)</span></a
-              >
+              <a class="nav-link" href="index.jsp">Washing Plans</a>
             </li>
             
             <li class="nav-item">
-              <a class="nav-link" href="login.jsp">login</a>
+              <a class="nav-link" href="login.jsp">Admin</a>
             </li>
+            <%
+            if(username != null){
+            %>
             <li class="nav-item">
-              <a class="nav-link" href="admin.jsp">Admin</a>
+              <a class="nav-link" href="verify_logout.jsp">Logout</a>
             </li>
+            <% } %>
         </div>
       </nav>
       <!-- Navbar end -->

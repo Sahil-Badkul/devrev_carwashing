@@ -11,7 +11,13 @@
         </head>
 
     <body>
-        <%@ include file="navbar.jsp"%>        
+        <%@ include file="navbar.jsp"%>    
+        <%
+        String name = (String)session.getAttribute("username");  
+        if(name != null){
+            response.sendRedirect("admin.jsp");
+        }
+        %>
         <div class="container">
             <div class="modal-dialog">            
             <div class="modal-content">

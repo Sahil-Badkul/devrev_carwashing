@@ -28,8 +28,7 @@ if(flag==1)
 {
   String userids=rs.getString("id"); 
   session.setAttribute("username", user_email);
-  session.setAttribute("id",userids);
-  response.sendRedirect("index.jsp");
+  response.sendRedirect("admin.jsp");
 }
 else
 {
