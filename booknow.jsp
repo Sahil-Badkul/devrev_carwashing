@@ -20,12 +20,6 @@
           </div>
           <div class="modal-body">
             <form method="post" action="verify_booknow.jsp">
-              <input
-                type="hidden"
-                id="bookingId"
-                name="bookingId"
-                value=" <%= (int) (Math.random() * 10) %>"
-              />
               <p>
                 <label for="packageType">Package Type</label>
                 <select
