@@ -86,10 +86,5 @@
       </div>
     </div>
     <%@ include file="./includes/footer.jsp"%>
-    <script>
-      function myFunction(status, id){
-          console.log(status, id);
-      }
-    </script>
   </body>
 </html>

@@ -22,9 +22,11 @@
             <li class="nav-item active">
               <a class="nav-link" href="index.jsp">Washing Plans</a>
             </li>
-            
             <li class="nav-item">
-              <a class="nav-link" href="login.jsp">Admin</a>
+              <a class="nav-link" href="registrationForm.jsp">User login</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="loginForm.jsp">Admin</a>
             </li>
             <%
             if(username != null){

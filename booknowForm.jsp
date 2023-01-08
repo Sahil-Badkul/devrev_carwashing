@@ -1,3 +1,5 @@
+<%@ page language="java" import="java.sql.*" %> 
+<%@ page import="java.io.*" %>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -41,25 +43,33 @@
                 <br />
                 <br />
                 <label for="carWashPoint">Select Washing Point</label>
-
                 <select
                   id="carWashPoint"
                   name="carWashPoint"
                   class="form-control"
                 >
-                  <option value="">Select Washing Point</option>
-                  <option value=" ABC Street New Jabalpur 400266">
-                    ABC Street New Jabalpur 400266
-                  </option>
-                  <option value="XYZ block Sector 1 - Seoni 480222">
-                    A3263 Sector 1- Seoni' 480222
-                  </option>
-                  <option value="H911 Indira Puram Lakhnadon 480886">
-                    Lakhnadon 480886
-                  </option>
-                </select>
+                <option value="">Select Washing Point</option>
+                  <%             
+                  Class.forName("com.mysql.jdbc.Driver").newInstance(); 
+                  Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/carwashing","root",""); 
+                  Statement st = conn.createStatement(); 
+                  String query = "select * from washingpoints";
+                  ResultSet rs = st.executeQuery(query); 
+                  int flag=0; 
+                  while(rs.next()) {
+                  %>
+                  <%
+                  String address = rs.getString("washingPointAddress");
+                  %>
+                    <option value="<%=address%>">
+                      <%=address%>
+                    </option>
+                  <% 
+                  }
+                  rs.close(); conn.close();
+                  %>
+              </select>
               </p>
-
               <p>
                 <label for="fullName">Full Name</label>
                 <input

@@ -22,7 +22,7 @@
             </li>
             
             <li class="nav-item">
-              <a class="nav-link" href="admin.jsp">All booking</a>
+              <a class="nav-link" href="admin.jsp">Total booking</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="accepted.jsp">Accepted booking</a>
@@ -30,6 +30,10 @@
             
             <li class="nav-item">
               <a class="nav-link" href="pending.jsp">Pending booking</a>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link" href="addWashingPointForm.jsp">Add Wasing Point</a>
             </li>
 
             <li class="nav-item">
